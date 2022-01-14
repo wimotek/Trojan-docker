@@ -3,7 +3,7 @@ name: default
 
 steps:
   - name: build
-    image: ngnix:latest
+    image: nginx
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
     commands:
