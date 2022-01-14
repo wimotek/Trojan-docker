@@ -2,4 +2,24 @@ kind: pipeline
 name: default
 
 steps:
-- name: 
+  - name: build
+    image: ngnix:latest
+    environment:
+      GOPROXY: https://mirrors.aliyun.com/goproxy/
+    commands:
+      - echo test
+
+  - name: docker
+    image: plugins/docker
+    settings:
+      repo: wimotek/v2ray
+      use_cache: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    tags:
+      - latest
+    when:
+      event: push
+      branch: master
