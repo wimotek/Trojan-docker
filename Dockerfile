@@ -2,8 +2,9 @@ FROM centos:latest
 #ENV DOMAIN_NAME jp1.cnas.ga
 #ENV TROJAN_PWD jp1.cnas.ga
 
-COPY  .  . \
-     &&chmod +x install.sh
+COPY . /root
+
+#&&chmod +x install.sh
 
 ADD web.zip /usr/share/nginx/html
 # COPY . /etc/nginx/nginx.conf
@@ -11,7 +12,7 @@ ADD web.zip /usr/share/nginx/html
 #WORKDIR /root
 
 RUN echo $PWD -------------- \
-    && ls -a \
+    && ls -a /root\
     && echo -------------------------- \
     && ls /usr/share/nginx/html
 
