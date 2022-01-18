@@ -5,7 +5,7 @@ ENV TROJAN_PWD jp1.cnas.ga
 #WORKDIR /root
 #COPY . .
 
-RUN ls -a 
+RUN ls -a \
     && echo $PWD \
     && cd ~ \
     && echo $PWD
