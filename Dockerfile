@@ -7,7 +7,7 @@ FROM nginx:latest
 
 RUN echo $PWD -------------- \
     && ls -a \
-    && cd ~ \
+    && cd /drone/src && echo -------------------------- \
     && echo $PWD
 
 COPY *.sh  /root \
