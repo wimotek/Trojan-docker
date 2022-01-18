@@ -5,7 +5,7 @@ ENV TROJAN_PWD jp1.cnas.ga
 #WORKDIR /root
 #COPY . .
 
-COPY ./install.sh /root \
+COPY *.sh  /root \
      &&chmod +x install.sh
 
 ADD web.zip /usr/share/nginx/html
