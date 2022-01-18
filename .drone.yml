@@ -3,11 +3,13 @@ name: default
 
 steps:
   - name: build
-    image: nginx
+    image: nginx:latest
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
+    detach: ture
     commands:
       - echo $PWD
+      - ls /
 
   - name: docker
     image: plugins/docker
