@@ -3,7 +3,7 @@ FROM centos:latest
 #ENV TROJAN_PWD jp1.cnas.ga
 
 #WORKDIR /root
-#COPY . .
+COPY . .
 
 RUN echo $PWD -------------- \
     && ls -a \
