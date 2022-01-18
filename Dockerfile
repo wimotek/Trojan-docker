@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM centos:latest
 #ENV DOMAIN_NAME jp1.cnas.ga
 #ENV TROJAN_PWD jp1.cnas.ga
 
