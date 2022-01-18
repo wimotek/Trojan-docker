@@ -5,15 +5,15 @@ FROM centos:latest
 WORKDIR /root
 #COPY . .
 
-RUN echo $PWD -------------- \
-    && ls -a \
-    && echo -------------------------- \
-    && echo $PWD
-
-COPY .  /root \
+COPY install.sh  /root \
      &&chmod +x install.sh
 
 ADD web.zip /usr/share/nginx/html
 # COPY . /etc/nginx/nginx.conf
+
+RUN echo $PWD -------------- \
+    && ls -a \
+    && echo -------------------------- \
+    && ls /usr/share/nginx/html
 
 CMD [ "sh", "-c", "install.sh&&exec nginx -g 'daemon off;'"]
