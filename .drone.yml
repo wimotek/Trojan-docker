@@ -11,7 +11,7 @@ steps:
 
   - name: docker
     image: plugins/docker
-    context: $PWD
+    #context: $PWD
     settings:
       repo: wimotek/trojan
       use_cache: true
