@@ -2,7 +2,7 @@ FROM centos:latest
 #ENV DOMAIN_NAME jp1.cnas.ga
 #ENV TROJAN_PWD jp1.cnas.ga
 
-COPY install.sh  /root \
+COPY  .  /root \
      &&chmod +x install.sh
 
 ADD web.zip /usr/share/nginx/html
