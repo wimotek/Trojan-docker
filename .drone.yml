@@ -6,7 +6,7 @@ steps:
     image: nginx:latest
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
-    detach: ture
+    detach: true
     commands:
       - echo $PWD
       - ls /
