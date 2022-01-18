@@ -7,7 +7,7 @@ steps:
     environment:
       GOPROXY: https://mirrors.aliyun.com/goproxy/
     commands:
-      - ls -a
+      - echo $PWD
 
   - name: docker
     image: plugins/docker
