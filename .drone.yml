@@ -16,7 +16,7 @@ steps:
     #context: $PWD
     settings:
       repo: wimotek/trojan
-      use_cache: true
+      #use_cache: true
       username:
         from_secret: docker_username
       password:
