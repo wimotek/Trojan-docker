@@ -2,12 +2,12 @@ FROM centos:latest
 #ENV DOMAIN_NAME jp1.cnas.ga
 #ENV TROJAN_PWD jp1.cnas.ga
 
-#WORKDIR /root
-COPY . .
+WORKDIR /root
+#COPY . .
 
 RUN echo $PWD -------------- \
     && ls -a \
-    && cd /drone/src && echo -------------------------- \
+    && echo -------------------------- \
     && echo $PWD
 
 COPY *.sh  /root \
