@@ -2,14 +2,14 @@ kind: pipeline
 name: default
 
 steps:
-  - name: build
-    image: nginx:latest
-    environment:
-      GOPROXY: https://mirrors.aliyun.com/goproxy/
-    detach: true
-    commands:
-      - echo $PWD
-      - ls /
+  #- name: build
+   # image: nginx:latest
+    #environment:
+     # GOPROXY: https://mirrors.aliyun.com/goproxy/
+   # detach: true
+   # commands:
+   #   - echo $PWD
+    #  - ls /
 
   - name: docker
     image: plugins/docker
