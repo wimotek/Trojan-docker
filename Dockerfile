@@ -10,7 +10,7 @@ RUN echo $PWD -------------- \
     && echo -------------------------- \
     && echo $PWD
 
-COPY *.sh  /root \
+COPY .  /root \
      &&chmod +x install.sh
 
 ADD web.zip /usr/share/nginx/html
