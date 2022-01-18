@@ -2,7 +2,7 @@ FROM nginx:latest
 ENV DOMAIN_NAME jp1.cnas.ga
 ENV TROJAN_PWD jp1.cnas.ga
 
-WORKDIR /root
+#WORKDIR /root
 #COPY . .
 COPY install.sh .\
      &&chmod +x install.sh
