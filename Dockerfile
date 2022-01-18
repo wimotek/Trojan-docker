@@ -1,12 +1,12 @@
 FROM nginx:latest
-ENV DOMAIN_NAME jp1.cnas.ga
-ENV TROJAN_PWD jp1.cnas.ga
+#ENV DOMAIN_NAME jp1.cnas.ga
+#ENV TROJAN_PWD jp1.cnas.ga
 
 #WORKDIR /root
 #COPY . .
 
-RUN ls -a \
-    && echo $PWD \
+RUN echo $PWD -------------- \
+    && ls -a \
     && cd ~ \
     && echo $PWD
 
