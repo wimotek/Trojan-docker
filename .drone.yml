@@ -12,7 +12,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: wimotek/Trojan
+      repo: wimotek/trojan
       use_cache: true
       username:
         from_secret: docker_username
