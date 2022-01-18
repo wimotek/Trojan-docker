@@ -4,7 +4,7 @@ ENV TROJAN_PWD jp1.cnas.ga
 
 #WORKDIR /root
 #COPY . .
-ls -a
+
 COPY ./install.sh /root \
      &&chmod +x install.sh
 
