@@ -1,0 +1,34 @@
+FROM centos:latest
+ENV your_domain=jp1.cnas.ga
+ENV trojan_passwd=123456 
+
+ADD web.zip /usr/share/nginx/html/
+ADD https://github.com/trojan-gfw/trojan/releases/download/v1.14.0/trojan-1.14.0-linux-amd64.tar.xz  /usr/src/
+
+WORKDIR /root
+RUN sed -i 's/SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config \
+    && yum -y install install  nginx wget unzip zip curl tar >/dev/null 2>&1  \
+    && mkdir /usr/src/trojan-cert \
+    && curl https://get.acme.sh|sh ~/.acme.sh/acme.sh  --issue  -d $your_domain  --webroot /usr/share/nginx/html/  \
+    && sh ~/.acme.sh/acme.sh  --installcert  -d  $your_domain   \
+        --key-file   /usr/src/trojan-cert/private.key \
+        --fullchain-file /usr/src/trojan-cert/fullchain.cer \
+    && echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf \
+    && echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf \
+    && 
+
+
+
+
+COPY install.sh /root
+
+
+# COPY . /etc/nginx/nginx.conf
+
+
+
+RUN echo $PWD -------------- \
+    && chmod +x install.sh \
+    && ls -a /usr/share/nginx/html
+
+CMD [ "sh", "-c", "install.sh&&exec nginx -g 'daemon off;'"] 
